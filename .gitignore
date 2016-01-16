@@ -1,0 +1,6 @@
+# Vagrant stuff
+/.vagrant/
+/.vagrant_cache/
+
+# Librarian-Puppet maintained directory
+/puppet/modules/
