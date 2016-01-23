@@ -7,3 +7,6 @@
 /puppet/.librarian/
 /puppet/.tmp/
 /puppet/Puppetfile.lock
+
+# Vim
+.*.swp
