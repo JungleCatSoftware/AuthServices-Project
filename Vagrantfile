@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder cache_dir, "/var/cache/apt/archives/"
 
   config.vm.define :webproxy do |web|
-    web.vm.network "forwarded_port", guest: 80, host: 8080
+    web.vm.network "private_network", ip: "10.10.2.10"
     web.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
     web.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "webproxy"
