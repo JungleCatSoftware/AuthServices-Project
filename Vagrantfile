@@ -24,21 +24,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :webproxy do |web|
     web.vm.network "forwarded_port", guest: 80, host: 8080
-    web.vm.network "private_network", ip: "10.10.1.10"
+    web.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
     web.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "webproxy"
     }
   end
 
   config.vm.define :accounts do |accounts|
-    accounts.vm.network "private_network", ip: "10.10.1.15"
+    accounts.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
     accounts.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "accounts"
     }
   end
 
   config.vm.define :accountsapi do |accountsapi|
-    accountsapi.vm.network "private_network", ip: "10.10.1.16"
+    accountsapi.vm.network "private_network", ip: "10.10.1.16", virtualbox__intnet: "internal"
     accountsapi.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "accountsapi"
     }
