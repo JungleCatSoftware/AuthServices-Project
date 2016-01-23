@@ -6,3 +6,4 @@ mod 'junglecatsoftware-nodetype',
 mod 'junglecatsoftware-webproxy',
   :path => '../puppet-webproxy'
 mod 'jfryman-nginx', '0.2.7'
+mod 'stankevich-python', '1.10.0'

@@ -1,7 +1,7 @@
 ---
 webproxy::accounts_pool:
-  - "localhost:3000"
+  - "10.10.1.15:3000"
 webproxy::accounts_api_pool:
-  - "localhost:3001"
+  - "10.10.1.16:3001"
 classes:
   - webproxy

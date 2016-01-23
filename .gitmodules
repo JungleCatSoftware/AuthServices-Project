@@ -4,3 +4,6 @@
 [submodule "puppet-webproxy"]
 	path = puppet-webproxy
 	url = git@github.com:JungleCatSoftware/puppet-webproxy.git
+[submodule "puppet-authservices"]
+	path = puppet-authservices
+	url = git@github.com:JungleCatSoftware/puppet-authservices.git
