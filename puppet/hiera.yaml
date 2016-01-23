@@ -1,0 +1,6 @@
+---
+:yaml:
+  :datadir: "hieradata/"
+:hierarchy:
+  - "applications/%{::application}"
+  - "global"
