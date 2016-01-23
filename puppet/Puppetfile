@@ -1,7 +1,7 @@
 forge "https://forgeapi.puppetlabs.com"
 
 mod 'puppetlabs-stdlib'
-#mod 'junglecatsoftware-jcsprofiles'
-#  :path => 'puppetmodules/puppet-jscprofiles'
-#mod 'junglecatsoftware-jcsroles'
-#  :path => 'puppetmodules/puppet-jscroles'
+mod 'junglecatsoftware-nodetype',
+  :path => '../puppet-nodetype'
+mod 'junglecatsoftware-webproxy',
+  :path => '../puppet-webproxy'
