@@ -5,3 +5,4 @@ mod 'junglecatsoftware-nodetype',
   :path => '../puppet-nodetype'
 mod 'junglecatsoftware-webproxy',
   :path => '../puppet-webproxy'
+mod 'jfryman-nginx', '0.2.7'
