@@ -33,14 +33,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :authservicesweb do |authservicesweb|
     authservicesweb.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
     authservicesweb.vm.provision "puppet", type: "puppet", facter: {
-      "vagrant_nodetype" => "accounts"
+      "vagrant_nodetype" => "authservicesweb"
     }
   end
 
   config.vm.define :authservicesapi do |authservicesapi|
     authservicesapi.vm.network "private_network", ip: "10.10.1.16", virtualbox__intnet: "internal"
     authservicesapi.vm.provision "puppet", type: "puppet", facter: {
-      "vagrant_nodetype" => "accountsapi"
+      "vagrant_nodetype" => "authservicesapi"
     }
   end
 
