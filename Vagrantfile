@@ -22,24 +22,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   cache_dir = local_cache(config.vm.box)
   config.vm.synced_folder cache_dir, "/var/cache/apt/archives/"
 
-  config.vm.define :webproxy do |web|
-    web.vm.network "private_network", ip: "10.10.2.10"
-    web.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
-    web.vm.provision "puppet", type: "puppet", facter: {
+  config.vm.define :webproxy do |webproxy|
+    webproxy.vm.network "private_network", ip: "10.10.2.10"
+    webproxy.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
+    webproxy.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "webproxy"
     }
   end
 
-  config.vm.define :accounts do |accounts|
-    accounts.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
-    accounts.vm.provision "puppet", type: "puppet", facter: {
+  config.vm.define :authservicesweb do |authservicesweb|
+    authservicesweb.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
+    authservicesweb.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "accounts"
     }
   end
 
-  config.vm.define :accountsapi do |accountsapi|
-    accountsapi.vm.network "private_network", ip: "10.10.1.16", virtualbox__intnet: "internal"
-    accountsapi.vm.provision "puppet", type: "puppet", facter: {
+  config.vm.define :authservicesapi do |authservicesapi|
+    authservicesapi.vm.network "private_network", ip: "10.10.1.16", virtualbox__intnet: "internal"
+    authservicesapi.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "accountsapi"
     }
   end

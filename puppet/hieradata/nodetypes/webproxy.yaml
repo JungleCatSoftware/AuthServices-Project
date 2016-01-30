@@ -1,7 +1,7 @@
 ---
-webproxy::accounts_pool:
+webproxy::authservicesweb_pool:
   - "10.10.1.15:3000"
-webproxy::accounts_api_pool:
+webproxy::authservicesapi_pool:
   - "10.10.1.16:3001"
 classes:
   - webproxy
