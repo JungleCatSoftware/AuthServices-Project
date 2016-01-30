@@ -7,3 +7,9 @@
 [submodule "puppet-authservices"]
 	path = puppet-authservices
 	url = git@github.com:JungleCatSoftware/puppet-authservices.git
+[submodule "src/AuthServices-Web"]
+	path = src/AuthServices-Web
+	url = git@github.com:JungleCatSoftware/AuthServices-Web.git
+[submodule "src/AuthServices-API"]
+	path = src/AuthServices-API
+	url = git@github.com:JungleCatSoftware/AuthServices-API.git
