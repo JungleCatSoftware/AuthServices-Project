@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.shell = "/bin/bash"
 
   config.r10k.puppet_dir = "puppet"
-  config.r10k.puppetfile_path = "puppet/Puppetfile"
+  config.r10k.puppetfile_path = "Puppetfile"
   config.r10k.module_path = "puppet/modules"
 
   cache_dir = local_cache(config.vm.box)
