@@ -16,8 +16,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Work around cosmetic issue (default uses -l which misbehaves when not in interactive shell)
   config.ssh.shell = "/bin/bash"
 
-  config.librarian_puppet.puppetfile_dir = "puppet"
-  config.librarian_puppet.destructive = true
+  config.r10k.puppet_dir = "puppet"
+  config.r10k.puppetfile_path = "puppet/Puppetfile"
+  config.r10k.module_path = "puppet/modules"
 
   cache_dir = local_cache(config.vm.box)
   config.vm.synced_folder cache_dir, "/var/cache/apt/archives/"

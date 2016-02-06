@@ -1,11 +1,6 @@
-forge "https://forgeapi.puppetlabs.com"
-
-mod 'puppetlabs-stdlib'
-mod 'junglecatsoftware-nodetype',
-  :path => '../puppet-nodetype'
-mod 'junglecatsoftware-webproxy',
-  :path => '../puppet-webproxy'
-mod 'junglecatsoftware-authservices',
-  :path => '../puppet-authservices'
-mod 'jfryman-nginx', '0.2.7'
-mod 'stankevich-python', '1.10.0'
+mod 'junglecatsoftware/nodetype', :local => true
+mod 'junglecatsoftware/webproxy', :local => true
+mod 'junglecatsoftware/authservices', :local => true
+mod 'puppetlabs/stdlib', :latest
+mod 'jfryman/nginx', '0.2.7'
+mod 'stankevich/python', '1.10.0'

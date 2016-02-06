@@ -1,11 +1,11 @@
 [submodule "puppet-nodetype"]
-	path = puppet-nodetype
+	path = puppet/modules/nodetype
 	url = git@github.com:JungleCatSoftware/puppet-nodetype.git
 [submodule "puppet-webproxy"]
-	path = puppet-webproxy
+	path = puppet/modules/webproxy
 	url = git@github.com:JungleCatSoftware/puppet-webproxy.git
 [submodule "puppet-authservices"]
-	path = puppet-authservices
+	path = puppet/modules/authservices
 	url = git@github.com:JungleCatSoftware/puppet-authservices.git
 [submodule "src/AuthServices-Web"]
 	path = src/AuthServices-Web

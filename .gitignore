@@ -2,11 +2,9 @@
 /.vagrant/
 /.vagrant_cache/
 
-# Librarian-Puppet files
+# r10k files
 /puppet/modules/**/
-/puppet/.librarian/
-/puppet/.tmp/
-/puppet/Puppetfile.lock
+/puppet/vendor/
 
 # Vim
 .*.swp
