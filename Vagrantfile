@@ -30,6 +30,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
   end
 
+  config.vm.define :cassandradb do |db|
+    db.vm.provider "virtualbox" do |vb|
+      vb.memory = 2048
+      vb.cpu = 2
+    end
+    db.vm.network "private_network", ip: "10.10.1.25", virtualbox__intnet: "internal"
+    db.vm.provision "puppet", type: "puppet", facter: {
+       "vagrant_nodetype" => "authservicesdb"
+    }
+  end
+
   config.vm.define :authservicesweb do |authservicesweb|
     authservicesweb.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
     authservicesweb.vm.provision "puppet", type: "puppet", facter: {
@@ -38,6 +49,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :authservicesapi do |authservicesapi|
+    authservicesapi.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+    end
     authservicesapi.vm.network "private_network", ip: "10.10.1.16", virtualbox__intnet: "internal"
     authservicesapi.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "authservicesapi"
