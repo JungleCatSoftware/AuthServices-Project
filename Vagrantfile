@@ -31,10 +31,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
   end
 
-  config.vm.define :cassandradb do |db|
+  config.vm.define :authservicesdb do |db|
     db.vm.provider "virtualbox" do |vb|
       vb.memory = 2048
-      vb.cpu = 2
+      vb.cpus = 2
     end
     db.vm.network "private_network", ip: "10.10.1.25", virtualbox__intnet: "internal"
     db.vm.provision "puppet", type: "puppet", facter: {
