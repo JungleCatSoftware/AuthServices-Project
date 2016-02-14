@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder cache_dir, "/var/cache/apt/archives/"
 
   config.vm.define :webproxy do |webproxy|
+    webproxy.vm.hostname = "webproxy"
     webproxy.vm.network "private_network", ip: "10.10.2.10"
     webproxy.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
     webproxy.vm.provision "puppet", type: "puppet", facter: {
@@ -32,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :authservicesdb do |db|
+    db.vm.hostname = "authservicesdb"
     db.vm.provider "virtualbox" do |vb|
       vb.memory = 2048
       vb.cpus = 2
@@ -43,6 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :authservicesweb do |authservicesweb|
+    authservicesweb.vm.hostname = "authservicesweb"
     authservicesweb.vm.network "private_network", ip: "10.10.1.15", virtualbox__intnet: "internal"
     authservicesweb.vm.provision "puppet", type: "puppet", facter: {
       "vagrant_nodetype" => "authservicesweb"
@@ -50,6 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :authservicesapi do |authservicesapi|
+    authservicesapi.vm.hostname = "authservicesapi"
     authservicesapi.vm.provider "virtualbox" do |vb|
       vb.memory = 1024
     end
