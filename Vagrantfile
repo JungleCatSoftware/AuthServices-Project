@@ -23,12 +23,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   cache_dir = local_cache(config.vm.box)
   config.vm.synced_folder cache_dir, "/var/cache/apt/archives/"
 
-  config.vm.define :webproxy do |webproxy|
-    webproxy.vm.hostname = "webproxy"
-    webproxy.vm.network "private_network", ip: "10.10.2.10"
-    webproxy.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
-    webproxy.vm.provision "puppet", type: "puppet", facter: {
-      "vagrant_nodetype" => "webproxy"
+  config.vm.define :authservicesproxy do |proxy|
+    proxy.vm.hostname = "authservicesproxy"
+    proxy.vm.network "private_network", ip: "10.10.2.10"
+    proxy.vm.network "private_network", ip: "10.10.1.10", virtualbox__intnet: "internal"
+    proxy.vm.provision "puppet", type: "puppet", facter: {
+      "vagrant_nodetype" => "authservicesproxy"
     }
   end
 

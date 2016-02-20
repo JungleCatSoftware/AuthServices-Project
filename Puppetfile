@@ -1,5 +1,4 @@
 mod 'junglecatsoftware/nodetype', :local => true
-mod 'junglecatsoftware/webproxy', :local => true
 mod 'junglecatsoftware/authservices', :local => true
 mod 'puppetlabs/apt', '2.2.1'
 mod 'puppetlabs/concat', '2.1.0'

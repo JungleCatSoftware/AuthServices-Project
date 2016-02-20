@@ -1,0 +1,7 @@
+---
+authservices::proxy::web_pool:
+  - "10.10.1.15:3000"
+authservices::proxy::api_pool:
+  - "10.10.1.16:3001"
+classes:
+  - authservices::proxy
