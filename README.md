@@ -8,8 +8,10 @@ Dependencies to build/run the project from this repo. Older (or newer) versions 
 - Vagrant (1.8.1)
 - Vagrant plugins:
   - vagrant-r10k (0.4.1)
-  - puppet (4.3.2)
 - VirtualBox (5.0.14r105127)
+
+### Xenial Compatability Notes
+If using Ubuntu 16.04 "Xenial", `vagrant plugin install` will fail using Vagrant 1.8.1+dfsg-1 and Ruby 1:2.3.0+1. Apply [this patch](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=818237#28) to `/usr/lib/ruby/vendor_ruby/vagrant/bundler.rb` to resolve the issue until updated code is made available to solve this issue.
 
 ## Usage
 ### Running
