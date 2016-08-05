@@ -1,6 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+def check_plugin(plugin)
+  unless Vagrant.has_plugin?("vagrant-#{plugin}")
+    raise "Vagrant plugin \"#{plugin}\" is required but not installed. Install with `vagrant plugin install vagrant-#{plugin}`."
+  end
+end
+
+check_plugin('r10k')
+
 VAGRANTFILE_API_VERSION = "2" 
 
 # Create local caching for packages
